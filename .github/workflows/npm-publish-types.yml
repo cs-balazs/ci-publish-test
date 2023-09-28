@@ -9,7 +9,7 @@ on:
     branches:
       - $default-branch
     paths:
-      - "$LIB_DIR/$LIB_NAME/**/*.ts"
+      - $LIB_DIR/$LIB_NAME/**/*.ts
 
 defaults:
   run:
