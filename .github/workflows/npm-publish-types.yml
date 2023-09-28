@@ -30,9 +30,9 @@ jobs:
         run: |
           git config --global user.email "cs-balazs@users.noreply.github.com"
           git config --global user.name "cs-balazs"
-          npm version patch
+          echo "NEW_VERSION=$(npm version patch)" >> $GITHUB_ENV
           git add .
-          git commit -m "@guildxyz/types version"
+          git commit -m "@guildxyz/types $NEW_VERSION"
           git push
 
       - name: "Publish package to NPM"
