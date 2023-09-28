@@ -6,6 +6,10 @@ on:
     paths:
       - "lib/types/**/*.ts"
 jobs:
+  defaults:
+    run:
+      working-directory: ./lib/types
+
   build:
     runs-on: ubuntu-latest
     steps:
@@ -17,7 +21,6 @@ jobs:
         with:
           node-version: "20.x"
           registry-url: "https://registry.npmjs.org"
-      - run: cd lib/types
       - run: npm ci
       - run: |
           git config --global user.email "cs-balazs@users.noreply.github.com"
