@@ -3,9 +3,9 @@ name: Publish @guildxyz/types
 on:
   push:
     branches:
-      - $default-branch
+      - "main"
     paths:
-      - lib/types/**/*.ts
+      - "lib/types/**/*.ts"
 
 defaults:
   run:
@@ -36,7 +36,7 @@ jobs:
           git add .
           git commit -m "@guildxyz/types version"
           git push
-          
+
       - name: "Publish package to NPM"
         run: npm publish
         env:
