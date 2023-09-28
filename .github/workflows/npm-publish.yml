@@ -1,8 +1,10 @@
 name: Publish to NPM
 on:
-  push: [main]
-  paths:
-    - "./src/**/*.ts"
+  push:
+    branches:
+      - "main"
+    paths:
+      - "./src/**/*.ts"
 jobs:
   build:
     runs-on: ubuntu-latest
