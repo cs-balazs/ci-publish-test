@@ -5,11 +5,12 @@ on:
       - "main"
     paths:
       - "lib/types/**/*.ts"
-jobs:
-  defaults:
-    run:
-      working-directory: ./lib/types
 
+defaults:
+  run:
+    working-directory: ./lib/types
+
+jobs:
   build:
     runs-on: ubuntu-latest
     steps:
