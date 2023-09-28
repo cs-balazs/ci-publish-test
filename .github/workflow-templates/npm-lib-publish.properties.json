@@ -1,5 +1,0 @@
-{
-  "name": "Publish an NPM package",
-  "description": "Publishes an NPM package from a specified directory",
-  "filePatterns": ["package.json$"]
-}

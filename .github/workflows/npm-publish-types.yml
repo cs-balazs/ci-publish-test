@@ -1,14 +1,19 @@
-name: Publish types to NPM
+env:
+  LIB_DIR: lib
+  LIB_NAME: types
+
+name: Publish @guildxyz/$LIB_NAME
+
 on:
   push:
     branches:
-      - "main"
+      - $default-branch
     paths:
-      - "lib/types/**/*.ts"
+      - "$LIB_DIR/$LIB_NAME/**/*.ts"
 
 defaults:
   run:
-    working-directory: ./lib/types
+    working-directory: ./$LIB_DIR/$LIB_NAME
 
 jobs:
   build:
@@ -28,7 +33,7 @@ jobs:
           git config --global user.name "cs-balazs"
       - run: npm version patch
       - run: git add .
-      - run: git commit -m "types lib version"
+      - run: git commit -m "@guildxyz/$LIB_NAME version"
       - run: git push
       - run: npm publish
         env:
