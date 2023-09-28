@@ -1,0 +1,34 @@
+{
+  "name": "ci-publish-test-types",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup ./src/index.ts",
+    "prepublishOnly": "npm run build",
+    "prepare": "npm run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "tsup": {
+    "format": [
+      "esm",
+      "cjs"
+    ],
+    "dts": {
+      "resolve": true,
+      "entry": [
+        "./src/index.ts"
+      ],
+      "compilerOptions": {
+        "moduleResolution": "node",
+        "strict": true,
+        "strictNullChecks": true
+      }
+    },
+    "clean": true,
+    "target": "esnext"
+  }
+}
